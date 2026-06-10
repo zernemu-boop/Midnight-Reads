@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Midnight Reads - Novel Recommendations</title>
+
+  <meta name="description" content="Midnight Reads helps readers discover amazing novels through personalized recommendations, reviews, and genre-based book suggestions.">
+  <meta name="keywords" content="novels, books, reading, book recommendations, fiction, fantasy, romance, mystery, thriller, Midnight Reads">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --midnight-ink: #0f0e17;
+      --parchment: #faf7f2;
+      --gold-accent: #c9a84c;
+      --gold-light: #e8d5a3;
+      --deep-plum: #3b2a4a;
+      --soft-teal: #2d7d7d;
+      --blush: #e8c4b8;
+      --text-body: #3a3a3a;
+      --text-muted: #7a7068;
+      --card-bg: #ffffff;
+      --border-soft: #e8e2da;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-body);
+      background-color: var(--parchment);
+    }
+
+    /* ── HEADER ── */
+    .header { background: var(--midnight-ink); border-bottom: 1px solid rgba(201,168,76,0.25); }
+    .header .sitename { font-family: 'Playfair Display', serif; color: var(--gold-accent); font-size: 1.6rem; letter-spacing: 0.02em; }
+    .top-row { padding: 12px 0; }
+    .social-links a { color: rgba(255,255,255,0.55); margin: 0 6px; font-size: 1rem; transition: color .2s; }
+    .social-links a:hover { color: var(--gold-accent); }
+    .search-form { display:flex; align-items:center; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:6px; overflow:hidden; }
+    .search-form .form-control { background:transparent; border:none; color:#fff; font-size:.85rem; padding:6px 14px; width:180px; }
+    .search-form .form-control::placeholder { color:rgba(255,255,255,0.4); }
+    .search-form .form-control:focus { box-shadow:none; }
+    .search-form .btn { background:none; border:none; color:rgba(255,255,255,0.5); padding:6px 12px; }
+    .search-form .btn:hover { color:var(--gold-accent); }
+
+    /* nav */
+    .nav-wrap { background: var(--deep-plum); }
+    .navmenu ul { list-style:none; margin:0; padding:0; display:flex; gap:4px; }
+    .navmenu ul li a { color:rgba(255,255,255,0.75); font-family:'Inter',sans-serif; font-size:.88rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; padding:14px 16px; display:block; text-decoration:none; transition:color .2s; }
+    .navmenu ul li a:hover, .navmenu ul li a.active { color:var(--gold-accent); }
+    .mobile-nav-toggle { color:#fff; font-size:1.4rem; cursor:pointer; }
+    @media(max-width:1199px){ .navmenu ul { display:none; } }
+
+    /* ── HERO ── */
+    .hero { background: linear-gradient(135deg, var(--midnight-ink) 0%, var(--deep-plum) 100%); padding: 100px 0 80px; }
+    .hero-card { background: rgba(255,255,255,0.04); border:1px solid rgba(201,168,76,0.2); border-radius:16px; padding:48px 40px; }
+    .eyebrow { background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); border-radius:30px; padding:6px 14px; color:var(--gold-accent); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+    .hero-card h2 { font-family:'Playfair Display',serif; color:#fff; font-size:2.6rem; line-height:1.2; }
+    .hero-card .lead { color:rgba(255,255,255,0.72); font-size:1rem; line-height:1.75; }
+    .btn-primary-ghost { background:transparent; border:2px solid var(--gold-accent); color:var(--gold-accent); border-radius:8px; padding:12px 28px; font-weight:600; font-size:.9rem; text-decoration:none; transition:all .25s; display:inline-flex; align-items:center; }
+    .btn-primary-ghost:hover { background:var(--gold-accent); color:var(--midnight-ink); }
+    .btn-video { color:rgba(255,255,255,0.8); text-decoration:none; font-size:.9rem; transition:color .2s; }
+    .btn-video:hover { color:var(--gold-accent); }
+    .play-icon { width:40px; height:40px; background:rgba(255,255,255,0.1); border:2px solid rgba(255,255,255,0.25); border-radius:50%; }
+    .mini-stats .stat { color:rgba(255,255,255,0.65); font-size:.82rem; }
+    .mini-stats .stat i { color:var(--gold-accent); }
+    .media-stack { position:relative; }
+    .media-stack .primary { border-radius:16px; overflow:hidden; }
+    .floating-badge { background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.35); border-radius:10px; padding:12px 18px; color:var(--gold-light); font-size:.82rem; margin-top:14px; }
+    .floating-badge i { color:var(--gold-accent); }
+
+    /* ── FEATURED SERVICES (cards) ── */
+    .featured-services { background:var(--parchment); padding:80px 0; }
+    .service-item { background:#fff; border:1px solid var(--border-soft); border-radius:14px; padding:36px 28px; height:100%; transition:box-shadow .2s, transform .2s; }
+    .service-item:hover { box-shadow:0 8px 32px rgba(0,0,0,.08); transform:translateY(-4px); }
+    .service-item .icon { width:52px; height:52px; background:linear-gradient(135deg,var(--deep-plum),var(--soft-teal)); border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+    .service-item .icon i { color:#fff; font-size:1.3rem; }
+    .service-item h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--midnight-ink); margin-bottom:12px; }
+    .service-item p { font-size:.88rem; color:var(--text-muted); line-height:1.7; }
+    .link-item { color:var(--soft-teal); font-size:.85rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:14px; }
+    .link-item:hover { color:var(--deep-plum); }
+
+    /* ── ABOUT ── */
+    .about { background:#fff; padding:80px 0; }
+    .section-title h2 { font-family:'Playfair Display',serif; font-size:2rem; color:var(--midnight-ink); margin-bottom:14px; }
+    .section-title p { color:var(--text-muted); max-width:720px; margin:0 auto; line-height:1.75; }
+    .showcase { border-radius:16px; overflow:hidden; }
+    .showcase-main img { border-radius:16px; }
+    .badge-note { display:flex; align-items:center; gap:14px; background:var(--midnight-ink); color:#fff; padding:14px 20px; border-radius:10px; margin-top:14px; }
+    .badge-note i { color:var(--gold-accent); font-size:1.4rem; }
+    .badge-note strong { font-size:.9rem; display:block; }
+    .badge-note small { color:rgba(255,255,255,0.6); font-size:.78rem; }
+    .intro-card { padding:10px 0; }
+    .kicker { font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--soft-teal); display:flex; align-items:center; gap:6px; }
+    .intro-head h2 { font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--midnight-ink); margin:10px 0 20px; }
+    .intro-body .lead { font-size:.95rem; color:var(--text-body); line-height:1.8; }
+    .intro-body ul { padding-left:1.2rem; color:var(--text-body); font-size:.9rem; line-height:2; }
+    .feature-item { display:flex; gap:16px; align-items:flex-start; }
+    .feature-item i { color:var(--gold-accent); font-size:1.3rem; margin-top:3px; flex-shrink:0; }
+    .feature-item h6 { font-size:.9rem; font-weight:700; color:var(--midnight-ink); margin-bottom:4px; }
+    .feature-item p { font-size:.83rem; color:var(--text-muted); }
+    .metric-band { display:flex; gap:0; background:var(--midnight-ink); border-radius:12px; padding:24px 32px; margin:28px 0; }
+    .metric { flex:1; text-align:center; }
+    .metric .value { font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--gold-accent); display:block; }
+    .metric .label { font-size:.78rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:.06em; }
+    .metric-band .divider { width:1px; background:rgba(255,255,255,0.12); margin:0 16px; }
+    .btn-accent { background:var(--gold-accent); color:var(--midnight-ink); border-radius:8px; padding:12px 26px; font-weight:700; font-size:.88rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+    .btn-accent:hover { background:var(--deep-plum); color:#fff; }
+    .link-more { color:var(--soft-teal); font-size:.88rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
+
+    /* ── GENRES (replacing old Services section) ── */
+    .services { background:var(--parchment); padding:80px 0; }
+    .service-card { background:#fff; border:1px solid var(--border-soft); border-radius:14px; padding:32px 26px; height:100%; transition:box-shadow .25s, transform .25s; position:relative; overflow:hidden; }
+    .service-card:hover { box-shadow:0 10px 40px rgba(0,0,0,.10); transform:translateY(-5px); }
+    .service-card.featured { background:var(--midnight-ink); border-color:var(--gold-accent); }
+    .service-card.featured h4 { color:#fff; }
+    .service-card.featured p { color:rgba(255,255,255,0.7); }
+    .service-card.featured .service-list li { color:rgba(255,255,255,0.7); }
+    .service-card.featured .service-btn { background:var(--gold-accent); color:var(--midnight-ink); }
+    .service-number { position:absolute; top:16px; right:20px; font-family:'Playfair Display',serif; font-size:3.5rem; color:rgba(0,0,0,.04); font-weight:700; line-height:1; }
+    .service-card.featured .service-number { color:rgba(255,255,255,.06); }
+    .service-icon-wrapper { margin-bottom:16px; }
+    .service-icon { width:48px; height:48px; background:linear-gradient(135deg,var(--deep-plum),var(--soft-teal)); border-radius:10px; display:flex; align-items:center; justify-content:center; }
+    .service-icon i { color:#fff; font-size:1.2rem; }
+    .service-content h4 { font-family:'Playfair Display',serif; font-size:1.15rem; color:var(--midnight-ink); margin-bottom:10px; }
+    .service-content p { font-size:.87rem; color:var(--text-muted); line-height:1.7; }
+    .service-list { list-style:none; padding:0; margin:14px 0; }
+    .service-list li { font-size:.83rem; color:var(--text-muted); padding:4px 0; display:flex; align-items:center; gap:8px; }
+    .service-list li::before { content:''; width:6px; height:6px; background:var(--gold-accent); border-radius:50%; flex-shrink:0; }
+    .service-pricing { display:flex; align-items:center; justify-content:space-between; margin-top:18px; border-top:1px solid var(--border-soft); padding-top:16px; }
+    .service-card.featured .service-pricing { border-color:rgba(255,255,255,.15); }
+    .price-tag { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--gold-accent); font-weight:600; }
+    .service-btn { background:var(--deep-plum); color:#fff; border-radius:6px; padding:8px 18px; font-size:.82rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px; transition:all .2s; }
+    .service-btn:hover { background:var(--soft-teal); color:#fff; }
+
+    /* ── FEATURES ── */
+    .features { background:#fff; padding:80px 0; }
+    .intro-panel .preview-visual img { border-radius:14px; }
+    .intro-title { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--midnight-ink); }
+    .intro-text { color:var(--text-muted); font-size:.9rem; line-height:1.7; }
+    .intro-highlights li { font-size:.87rem; color:var(--text-body); margin-bottom:8px; display:flex; align-items:flex-start; gap:10px; }
+    .intro-highlights li i { color:var(--soft-teal); font-size:1rem; margin-top:1px; }
+    .cta-btn { background:var(--gold-accent); color:var(--midnight-ink); border-radius:8px; padding:11px 24px; font-weight:700; font-size:.88rem; border:none; }
+    .cta-btn:hover { background:var(--deep-plum); color:#fff; }
+    .link-btn { color:var(--soft-teal); font-size:.88rem; font-weight:600; border:none; }
+    .feature-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .feature-item { background:var(--parchment); border:1px solid var(--border-soft); border-radius:12px; padding:22px; display:flex; gap:16px; align-items:flex-start; }
+    .f-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .f-icon i { color:#fff; font-size:1.1rem; }
+    .badge-blue { background:var(--deep-plum); }
+    .badge-green { background:var(--soft-teal); }
+    .badge-purple { background:#6b4c8a; }
+    .badge-orange { background:#c97d2a; }
+    .badge-cyan { background:#2a8a8a; }
+    .badge-pink { background:#a84c6b; }
+    .f-title { font-size:.9rem; font-weight:700; color:var(--midnight-ink); margin-bottom:4px; }
+    .f-text { font-size:.82rem; color:var(--text-muted); margin:0; line-height:1.6; }
+    .f-meta span { font-size:.75rem; color:var(--soft-teal); font-weight:600; }
+    .f-body { flex:1; }
+    .assurance-banner { background:var(--midnight-ink); border-radius:12px; padding:22px 28px; display:flex; align-items:center; gap:18px; margin-top:20px; }
+    .assurance-icon { color:var(--gold-accent); font-size:1.8rem; }
+    .assurance-content { flex:1; }
+    .assurance-content h5 { color:#fff; font-family:'Playfair Display',serif; margin:0 0 4px; font-size:1rem; }
+    .assurance-content p { color:rgba(255,255,255,0.6); margin:0; font-size:.82rem; }
+    .banner-btn { background:var(--gold-accent); color:var(--midnight-ink); border-radius:6px; padding:9px 20px; font-size:.82rem; font-weight:700; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { background:var(--parchment); padding:80px 0; }
+    .critic-review { background:#fff; border:1px solid var(--border-soft); border-radius:12px; padding:28px; height:100%; }
+    .review-quote { font-family:'Playfair Display',serif; font-size:4rem; color:var(--gold-accent); line-height:.8; margin-bottom:10px; }
+    .critic-review .stars i { color:var(--gold-accent); font-size:.85rem; }
+    .critic-review p { font-size:.9rem; color:var(--text-body); line-height:1.7; margin:12px 0; font-style:italic; font-family:'Lora',serif; }
+    .critic-name { font-weight:700; font-size:.82rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; }
+    .testimonial-item { background:#fff; border:1px solid var(--border-soft); border-radius:14px; padding:28px; }
+    .testimonial-item .stars i { color:var(--gold-accent); font-size:.85rem; }
+    .testimonial-item p { font-family:'Lora',serif; font-style:italic; color:var(--text-body); font-size:.9rem; line-height:1.7; margin:12px 0; }
+    .testimonial-profile { display:flex; align-items:center; gap:14px; margin-top:16px; }
+    .testimonial-profile img { width:48px; height:48px; object-fit:cover; border:2px solid var(--gold-light); }
+    .testimonial-profile h3 { font-size:.9rem; font-weight:700; margin:0; color:var(--midnight-ink); }
+    .testimonial-profile h4 { font-size:.78rem; color:var(--text-muted); margin:0; font-weight:400; }
+    .overall-rating { margin-top:40px; }
+    .rating-number { font-family:'Playfair Display',serif; font-size:4rem; color:var(--midnight-ink); font-weight:700; }
+    .rating-stars i { color:var(--gold-accent); font-size:1.2rem; }
+    .rating-platforms { display:flex; justify-content:center; gap:18px; margin-top:10px; }
+    .rating-platforms span { background:var(--midnight-ink); color:rgba(255,255,255,.7); padding:5px 14px; border-radius:30px; font-size:.78rem; font-weight:500; }
+
+    /* ── CTA ── */
+    .call-to-action { background:linear-gradient(135deg,var(--midnight-ink) 0%,var(--deep-plum) 100%); padding:80px 0; }
+    .cta-wrapper { border:1px solid rgba(201,168,76,0.25); border-radius:20px; padding:60px 50px; }
+    .section-label span { font-size:.78rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-accent); border:1px solid rgba(201,168,76,0.35); padding:5px 14px; border-radius:30px; }
+    .cta-wrapper h2 { font-family:'Playfair Display',serif; color:#fff; font-size:2.4rem; margin:16px 0; }
+    .accent-text { color:var(--gold-accent); }
+    .cta-wrapper p { color:rgba(255,255,255,0.7); font-size:.93rem; line-height:1.75; }
+    .benefit-row { display:flex; gap:24px; margin-bottom:12px; }
+    .benefit-item { display:flex; align-items:center; gap:10px; }
+    .check-icon { width:24px; height:24px; background:rgba(201,168,76,0.2); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+    .check-icon i { color:var(--gold-accent); font-size:.75rem; }
+    .benefit-item span { color:rgba(255,255,255,0.8); font-size:.88rem; }
+    .btn-primary-action { background:var(--gold-accent); color:var(--midnight-ink); border-radius:8px; padding:13px 30px; font-weight:700; font-size:.9rem; text-decoration:none; }
+    .btn-primary-action:hover { background:#e0ba5a; }
+    .btn-text-link { background:none; border:none; color:rgba(255,255,255,0.7); font-size:.9rem; display:inline-flex; align-items:center; gap:8px; text-decoration:none; }
+    .btn-text-link:hover { color:#fff; }
+    .trust-indicators { display:flex; align-items:center; gap:0; margin-top:32px; }
+    .indicator { text-align:center; padding:0 24px; }
+    .indicator .metric { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--gold-accent); }
+    .indicator .label { font-size:.75rem; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:.06em; }
+    .trust-indicators .separator { width:1px; height:44px; background:rgba(255,255,255,.15); }
+    .image-container { position:relative; }
+    .image-container .main-visual { border-radius:16px; width:100%; }
+    .floating-badge { position:absolute; background:rgba(15,14,23,.85); border:1px solid rgba(201,168,76,.35); border-radius:10px; padding:12px 16px; display:flex; align-items:center; gap:12px; }
+    .badge-1 { bottom:30px; left:-20px; }
+    .badge-2 { top:30px; right:-10px; }
+    .badge-icon { color:var(--gold-accent); font-size:1.3rem; }
+    .badge-title { color:#fff; font-size:.85rem; font-weight:700; }
+    .badge-subtitle { color:rgba(255,255,255,.6); font-size:.75rem; }
+    .action-group { display:flex; align-items:center; gap:20px; margin-top:28px; flex-wrap:wrap; }
+
+    /* ── TEAM ── */
+    .team { background:#fff; padding:80px 0; }
+    .member-card { background:var(--parchment); border:1px solid var(--border-soft); border-radius:14px; overflow:hidden; }
+    .member-media { position:relative; overflow:hidden; }
+    .member-media img { width:100%; height:240px; object-fit:cover; transition:transform .3s; }
+    .member-card:hover .member-media img { transform:scale(1.04); }
+    .social-list { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(0,0,0,.7),transparent); padding:16px 14px 10px; list-style:none; margin:0; display:flex; gap:10px; }
+    .social-list a { color:rgba(255,255,255,.8); font-size:.95rem; transition:color .2s; }
+    .social-list a:hover { color:var(--gold-accent); }
+    .member-content { padding:20px 22px; }
+    .member-name { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--midnight-ink); margin-bottom:4px; }
+    .member-role { font-size:.8rem; color:var(--soft-teal); font-weight:600; text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; }
+    .member-bio { font-size:.83rem; color:var(--text-muted); line-height:1.6; margin:0; }
+    .team-highlight { background:var(--parchment); border:1px solid var(--border-soft); border-radius:12px; padding:24px 28px; gap:18px; }
+    .team-highlight .icon-wrap { color:var(--gold-accent); font-size:2rem; }
+    .team-highlight .title { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--midnight-ink); margin-bottom:6px; }
+    .team-highlight .desc { font-size:.87rem; color:var(--text-muted); }
+    .join-card { background:var(--midnight-ink); border-radius:12px; padding:28px; }
+    .join-card h5 { font-family:'Playfair Display',serif; color:#fff; }
+    .join-card p { color:rgba(255,255,255,.65); font-size:.87rem; }
+    .btn-join { background:var(--gold-accent); color:var(--midnight-ink); border-radius:8px; padding:10px 22px; font-weight:700; font-size:.88rem; text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
+
+    /* ── PRICING ── */
+    .pricing { background:var(--parchment); padding:80px 0; }
+    .pricing-card { background:#fff; border:1px solid var(--border-soft); border-radius:16px; padding:36px 30px; height:100%; display:flex; flex-direction:column; }
+    .pricing-card.featured { background:var(--midnight-ink); border-color:var(--gold-accent); }
+    .plan-name { font-family:'Playfair Display',serif; font-size:1.4rem; margin-bottom:6px; }
+    .pricing-card.featured .plan-name { color:#fff; }
+    .plan-description { font-size:.85rem; color:var(--text-muted); line-height:1.6; }
+    .pricing-card.featured .plan-description { color:rgba(255,255,255,.6); }
+    .featured-badge { background:var(--gold-accent); color:var(--midnight-ink); font-size:.72rem; font-weight:700; padding:4px 12px; border-radius:30px; display:inline-block; margin-bottom:10px; text-transform:uppercase; letter-spacing:.06em; }
+    .pricing-display { margin:20px 0; }
+    .price { display:flex; align-items:baseline; gap:2px; }
+    .currency { font-size:1.2rem; color:var(--text-muted); }
+    .amount { font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:var(--midnight-ink); }
+    .pricing-card.featured .amount { color:var(--gold-accent); }
+    .pricing-card.featured .currency { color:rgba(255,255,255,.5); }
+    .period { color:var(--text-muted); font-size:.85rem; }
+    .pricing-card.featured .period { color:rgba(255,255,255,.5); }
+    .features-list { flex:1; margin:20px 0; }
+    .feature { display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:.87rem; }
+    .feature i { color:var(--soft-teal); }
+    .pricing-card.featured .feature i { color:var(--gold-accent); }
+    .pricing-card.featured .feature { color:rgba(255,255,255,.8); }
+    .btn-plan { display:block; text-align:center; background:var(--deep-plum); color:#fff; border-radius:8px; padding:13px; font-weight:700; font-size:.9rem; text-decoration:none; transition:background .2s; }
+    .btn-plan:hover { background:var(--soft-teal); color:#fff; }
+    .pricing-card.featured .btn-plan { background:var(--gold-accent); color:var(--midnight-ink); }
+    .pricing-card.featured .btn-plan:hover { background:#e0ba5a; }
+    .guarantee-text { color:var(--text-muted); font-size:.87rem; }
+    .contact-text { font-size:.87rem; color:var(--text-muted); }
+    .contact-text a { color:var(--soft-teal); }
+
+    /* ── FAQ ── */
+    .faq { background:#fff; padding:80px 0; }
+    .faq-item { border:1px solid var(--border-soft); border-radius:12px; margin-bottom:12px; overflow:hidden; }
+    .faq-header { display:flex; align-items:center; gap:14px; padding:20px 24px; cursor:pointer; }
+    .faq-icon { color:var(--gold-accent); font-size:1.1rem; }
+    .faq-header h4 { flex:1; font-size:.95rem; font-weight:600; color:var(--midnight-ink); margin:0; font-family:'Inter',sans-serif; }
+    .faq-toggle .bi-dash { display:none; }
+    .faq-active .faq-toggle .bi-plus { display:none; }
+    .faq-active .faq-toggle .bi-dash { display:block; }
+    .faq-toggle i { color:var(--text-muted); }
+    .faq-content { display:none; padding:0 24px 20px 56px; }
+    .faq-active .faq-content { display:block; }
+    .faq-content p { font-size:.9rem; color:var(--text-muted); line-height:1.75; margin:0; }
+
+    /* ── CONTACT ── */
+    .contact { background:linear-gradient(135deg,var(--midnight-ink) 0%,var(--deep-plum) 100%); padding:80px 0; }
+    .contact .section-title h2 { color:#fff; }
+    .contact .section-title p { color:rgba(255,255,255,.65); }
+    .info-item { gap:16px; margin-bottom:28px; }
+    .info-item i { font-size:1.5rem; color:var(--gold-accent); }
+    .info-item h3 { font-size:.85rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--gold-light); margin-bottom:4px; }
+    .info-item p { color:rgba(255,255,255,.75); font-size:.9rem; margin:0; }
+    .php-email-form .form-control, .php-email-form textarea { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); color:#fff; border-radius:8px; padding:12px 16px; }
+    .php-email-form .form-control::placeholder, .php-email-form textarea::placeholder { color:rgba(255,255,255,.4); }
+    .php-email-form .form-control:focus, .php-email-form textarea:focus { background:rgba(255,255,255,.12); border-color:rgba(201,168,76,.5); box-shadow:none; color:#fff; }
+    .php-email-form button[type="submit"] { background:var(--gold-accent); color:var(--midnight-ink); border:none; border-radius:8px; padding:13px 36px; font-weight:700; font-size:.9rem; cursor:pointer; transition:background .2s; }
+    .php-email-form button[type="submit"]:hover { background:#e0ba5a; }
+
+    /* ── FOOTER ── */
+    .footer { background:var(--midnight-ink); padding:60px 0 0; }
+    .footer-brand .sitename { font-family:'Playfair Display',serif; color:var(--gold-accent); font-size:1.5rem; }
+    .footer-brand .tagline { color:rgba(255,255,255,.55); font-size:.87rem; line-height:1.7; margin-top:10px; }
+    .footer .social-links a { display:inline-flex; width:36px; height:36px; align-items:center; justify-content:center; background:rgba(255,255,255,.07); border-radius:50%; color:rgba(255,255,255,.6); margin-right:6px; transition:all .2s; }
+    .footer .social-links a:hover { background:var(--gold-accent); color:var(--midnight-ink); }
+    .footer-links-grid h5 { color:#fff; font-size:.9rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px; }
+    .footer-links-grid ul li { margin-bottom:8px; }
+    .footer-links-grid ul li a { color:rgba(255,255,255,.55); font-size:.87rem; text-decoration:none; transition:color .2s; }
+    .footer-links-grid ul li a:hover { color:var(--gold-accent); }
+    .footer-cta h5 { color:#fff; font-size:.9rem; font-weight:700; }
+    .btn-outline { border:1px solid rgba(201,168,76,.5); color:var(--gold-accent); border-radius:8px; padding:10px 22px; font-size:.85rem; font-weight:600; text-decoration:none; transition:all .2s; }
+    .btn-outline:hover { background:var(--gold-accent); color:var(--midnight-ink); }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.08); padding:20px 0; margin-top:40px; }
+    .footer-bottom-content { display:flex; justify-content:space-between; align-items:center; }
+    .footer-bottom p { color:rgba(255,255,255,.4); font-size:.82rem; }
+    .credits { font-size:.82rem; color:rgba(255,255,255,.3); }
+    .credits a { color:rgba(201,168,76,.7); }
+
+    /* ── STATS ── */
+    .stats { background:var(--parchment); padding:70px 0; }
+    .stats-board { display:flex; gap:0; background:#fff; border:1px solid var(--border-soft); border-radius:16px; overflow:hidden; }
+    .stat-tile { flex:1; padding:30px 24px; border-right:1px solid var(--border-soft); }
+    .stat-tile:last-child { border-right:none; }
+    .tile-head { display:flex; gap:14px; align-items:flex-start; margin-bottom:16px; }
+    .tile-head > i { font-size:1.5rem; color:var(--gold-accent); }
+    .tile-head .title { font-size:.9rem; font-weight:700; color:var(--midnight-ink); margin:0 0 3px; }
+    .tile-head .hint { font-size:.78rem; color:var(--text-muted); }
+    .metric-number { font-family:'Playfair Display',serif; font-size:2.4rem; color:var(--deep-plum); font-weight:700; }
+    .metric-suffix { font-family:'Playfair Display',serif; font-size:2rem; color:var(--gold-accent); }
+    .legend-row { display:flex; gap:24px; margin-top:16px; }
+    .dot { width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:6px; }
+    .dot-primary { background:var(--gold-accent); }
+    .dot-neutral { background:var(--soft-teal); }
+    .legend-item { font-size:.78rem; color:var(--text-muted); display:flex; align-items:center; }
+
+    /* ── SKILLS ── */
+    .skills { background:#fff; padding:80px 0; }
+    .skills-header h3 { font-family:'Playfair Display',serif; font-size:1.7rem; color:var(--midnight-ink); margin-bottom:14px; }
+    .skills-header p { font-size:.9rem; color:var(--text-muted); line-height:1.75; }
+    .certifications { display:flex; gap:12px; margin-top:24px; flex-wrap:wrap; }
+    .cert-item { display:flex; align-items:center; gap:8px; background:var(--parchment); border:1px solid var(--border-soft); border-radius:8px; padding:9px 16px; font-size:.82rem; font-weight:600; color:var(--text-body); }
+    .cert-item i { color:var(--gold-accent); }
+    .skill-item { margin-bottom:20px; }
+    .skill-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+    .skill-header h4 { font-size:.9rem; font-weight:700; color:var(--midnight-ink); margin:0; }
+    .skill-value { font-size:.85rem; font-weight:700; color:var(--gold-accent); }
+    .skill-bar { height:7px; background:var(--border-soft); border-radius:4px; overflow:hidden; }
+    .skill-bar .progress-bar { background:linear-gradient(90deg,var(--deep-plum),var(--soft-teal)); border-radius:4px; transition:width 1s; }
+    .skill-item p { font-size:.78rem; color:var(--text-muted); margin-top:5px; }
+
+    /* ── CLIENTS ── */
+    .clients { background:var(--parchment); padding:40px 0; overflow:hidden; }
+    .clients-wrapper { overflow:hidden; }
+    .clients-track { display:flex; gap:40px; }
+    .client-logo img { height:40px; opacity:.45; filter:grayscale(1); transition:opacity .2s; }
+    .client-logo img:hover { opacity:.8; filter:none; }
+
+    /* ── PORTFOLIO ── */
+    .portfolio { background:#fff; padding:80px 0; }
+    .portfolio-filters { list-style:none; padding:0; display:flex; gap:8px; flex-wrap:wrap; }
+    .portfolio-filters li { background:var(--parchment); border:1px solid var(--border-soft); border-radius:6px; padding:7px 18px; font-size:.82rem; font-weight:600; cursor:pointer; transition:all .2s; }
+    .portfolio-filters li.filter-active, .portfolio-filters li:hover { background:var(--deep-plum); color:#fff; border-color:var(--deep-plum); }
+    .portfolio-wrap { position:relative; overflow:hidden; border-radius:12px; }
+    .portfolio-wrap img { width:100%; height:260px; object-fit:cover; transition:transform .4s; }
+    .portfolio-wrap:hover img { transform:scale(1.06); }
+    .portfolio-info { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(15,14,23,.88),transparent); padding:20px 18px 14px; opacity:0; transition:opacity .3s; }
+    .portfolio-wrap:hover .portfolio-info { opacity:1; }
+    .portfolio-info h4 { color:#fff; font-family:'Playfair Display',serif; font-size:1rem; margin-bottom:2px; }
+    .portfolio-info p { color:var(--gold-light); font-size:.78rem; margin-bottom:10px; }
+    .portfolio-links a { color:rgba(255,255,255,.8); margin-right:10px; font-size:1.1rem; }
+
+    /* ── SCROLL TOP & GENERAL ── */
+    .scroll-top { width:40px; height:40px; background:var(--gold-accent); border-radius:50%; color:var(--midnight-ink); font-size:1.2rem; position:fixed; bottom:24px; right:24px; z-index:999; display:none; align-items:center; justify-content:center; text-decoration:none; }
+    .section-title { text-align:center; padding-bottom:40px; }
+
+    @media(max-width:767px){
+      .hero-card { padding:30px 22px; }
+      .hero-card h2 { font-size:1.9rem; }
+      .stats-board { flex-direction:column; }
+      .stat-tile { border-right:none; border-bottom:1px solid var(--border-soft); }
+      .feature-grid { grid-template-columns:1fr; }
+      .cta-wrapper { padding:36px 24px; }
+      .metric-band { flex-direction:column; gap:16px; }
+      .metric-band .divider { width:100%; height:1px; }
+      .trust-indicators { flex-wrap:wrap; gap:20px; }
+      .footer-bottom-content { flex-direction:column; gap:10px; }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+    <div class="container-fluid container-xl position-relative">
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center text-decoration-none">
+          <h1 class="sitename mb-0">Midnight Reads</h1>
+        </a>
+        <div class="d-flex align-items-center">
+          <div class="social-links">
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          </div>
+          <form class="search-form ms-4">
+            <input type="text" placeholder="Search novels, genres…" class="form-control">
+            <button type="submit" class="btn"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="nav-wrap">
+      <div class="container d-flex justify-content-center position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Genres</a></li>
+            <li><a href="#features">Why Us</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <div class="hero-card shadow-sm">
+              <div class="eyebrow d-inline-flex align-items-center mb-3">
+                <i class="bi bi-stars me-2"></i>
+                <span>Discover your next favourite novel</span>
+              </div>
+              <h2 class="display-5 fw-bold mb-3">Welcome to Midnight Reads</h2>
+              <p class="lead mb-4">Where every page leads to a new adventure. We help readers like you find novels that truly resonate — whether you're drawn to sweeping romances, edge-of-your-seat thrillers, magical fantasy worlds, or quiet literary fiction. Our curated recommendation platform connects you with stories that match your unique taste, mood, and reading pace. Explore, discover, and fall in love with books you never knew you needed.</p>
+              <div class="d-flex flex-wrap gap-3">
+                <a href="#about" class="btn btn-primary-ghost">
+                  <span>Explore Now</span>
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+                <a href="#services" class="btn-video d-inline-flex align-items-center text-decoration-none">
+                  <span class="play-icon d-inline-flex align-items-center justify-content-center me-2">
+                    <i class="bi bi-book-fill" style="color:var(--gold-accent);font-size:.9rem;"></i>
+                  </span>
+                  <span>Browse Genres</span>
+                </a>
+              </div>
+              <div class="mini-stats d-flex flex-wrap gap-4 mt-4">
+                <div class="stat d-flex align-items-center">
+                  <i class="bi bi-lightning-charge me-2"></i>
+                  <span>5,000+ Books Recommended</span>
+                </div>
+                <div class="stat d-flex align-items-center">
+                  <i class="bi bi-shield-check me-2"></i>
+                  <span>1,200+ Happy Readers</span>
+                </div>
+                <div class="stat d-flex align-items-center">
+                  <i class="bi bi-people me-2"></i>
+                  <span>20+ Genres Covered</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="media-stack">
+              <figure class="media primary shadow-sm mb-3">
+                <img src="assets/img/illustration/illustration-8.webp" class="img-fluid rounded-4" alt="Midnight Reads – book discovery platform">
+              </figure>
+              <div class="floating-badge d-flex align-items-center shadow-sm">
+                <i class="bi bi-award me-2"></i>
+                <span>Ready to dive into a fictional world?</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Services -->
+    <section id="featured-services" class="featured-services section">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="icon"><i class="bi bi-bookmark-star-fill"></i></div>
+              <h3>Editor's Picks</h3>
+              <p>Each week our editorial team hand-selects standout novels across every genre — books that have moved us, surprised us, or kept us awake far too late. These are our heartfelt recommendations, not algorithms.</p>
+              <div class="card-links"><a href="#" class="link-item">See Picks <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
+              <h3>Trending This Month</h3>
+              <p>See which novels readers are buzzing about right now. From debut breakouts to long-awaited sequels, our trending list reflects what the Midnight Reads community is loving this month.</p>
+              <div class="card-links"><a href="#" class="link-item">View Trending <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="icon"><i class="bi bi-person-heart"></i></div>
+              <h3>Personalized For You</h3>
+              <p>Tell us what genres, authors, and moods you love, and we'll build a tailored reading list just for you. The more you read and rate, the sharper your recommendations become.</p>
+              <div class="card-links"><a href="#" class="link-item">Get Started <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="icon"><i class="bi bi-chat-quote-fill"></i></div>
+              <h3>Reader Reviews</h3>
+              <p>Real reviews from real readers. Browse honest ratings, detailed thoughts, and community discussions to find out if a book is right for you before you commit to it.</p>
+              <div class="card-links"><a href="#" class="link-item">Read Reviews <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="icon"><i class="bi bi-trophy-fill"></i></div>
+              <h3>Book of the Week</h3>
+              <p>Every Monday we spotlight one extraordinary novel — chosen for its compelling story, unforgettable characters, and the way it lingers with you long after the last page. Don't miss this week's pick.</p>
+              <div class="card-links"><a href="#" class="link-item">This Week's Pick <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item">
+              <div class="icon"><i class="bi bi-compass-fill"></i></div>
+              <h3>Reading Journey Guides</h3>
+              <p>New to a genre? We've curated starter guides and reading pathways for Fantasy, Mystery, Romance, Sci-Fi, and more — so you always know where to begin and where to go next.</p>
+              <div class="card-links"><a href="#" class="link-item">Explore Guides <i class="bi bi-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title">
+        <h2>About Midnight Reads</h2>
+        <p>A novel recommendation platform built by readers, for readers. We believe every person deserves to find the stories that will move them — and we've made it our mission to help you do exactly that.</p>
+      </div>
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5 order-lg-2">
+            <aside class="showcase">
+              <figure class="showcase-main">
+                <img src="assets/img/about/about-portrait-7.webp" alt="A reader lost in a good novel" class="img-fluid">
+                <figcaption class="badge-note mt-2">
+                  <i class="bi bi-people-fill"></i>
+                  <div>
+                    <strong>Growing Reader Community</strong>
+                    <small>1,200+ readers discovering new favourites every day.</small>
+                  </div>
+                </figcaption>
+              </figure>
+            </aside>
+          </div>
+          <div class="col-lg-7 order-lg-1">
+            <article class="intro-card">
+              <div class="intro-head">
+                <span class="kicker"><i class="bi bi-stars me-1"></i>Our Story</span>
+                <h2>Connecting Readers With Stories They'll Love</h2>
+              </div>
+              <div class="intro-body">
+                <p class="lead">Midnight Reads was born from a simple frustration: too many books, too little guidance. We set out to build a platform that feels like getting a recommendation from a trusted friend who reads everything — one who genuinely knows your taste and never steers you wrong.</p>
+                <ul style="margin-top:14px;">
+                  <li>Personalised novel recommendations tailored to your genre preferences</li>
+                  <li>Genre-based discovery pathways for new and experienced readers</li>
+                  <li>Curated lists — Hidden Gems, Award Winners, Page-Turners, and more</li>
+                  <li>A space to explore new authors, debut novels, and international fiction</li>
+                  <li>A warm, welcoming community of passionate book lovers</li>
+                </ul>
+                <p style="margin-top:16px;">At Midnight Reads, we believe every reader deserves a story that captivates them completely. Let us help you find the books that keep you turning pages long after midnight.</p>
+                <div class="feature-list row gy-3 mt-2">
+                  <div class="col-md-6">
+                    <div class="feature-item">
+                      <i class="bi bi-book"></i>
+                      <div class="text">
+                        <h6>Personalised Recommendations</h6>
+                        <p>Novel suggestions based on the genres, authors, and reading moods you love most.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="feature-item">
+                      <i class="bi bi-search"></i>
+                      <div class="text">
+                        <h6>Discover New Stories</h6>
+                        <p>Bestsellers, hidden gems, and exciting new releases across every genre — all in one place.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="metric-band mt-4">
+                  <div class="metric"><span class="value">5,000+</span><span class="label">Books Recommended</span></div>
+                  <div class="divider"></div>
+                  <div class="metric"><span class="value">1,200+</span><span class="label">Active Readers</span></div>
+                  <div class="divider"></div>
+                  <div class="metric"><span class="value">20+</span><span class="label">Genres Covered</span></div>
+                </div>
+                <div class="actions d-flex flex-wrap align-items-center gap-3 mt-3">
+                  <a href="#services" class="btn btn-accent"><i class="bi bi-compass me-1"></i> Browse Genres</a>
+                  <a href="#contact" class="link-more">Find your next favourite book <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clients / Partners Section -->
+    <section id="clients" class="clients section">
+      <div class="container">
+        <div class="clients-wrapper">
+          <div class="clients-track d-flex align-items-center justify-content-around flex-wrap gap-4">
+            <div class="client-logo"><img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Partner" loading="lazy"></div>
+            <div class="client-logo"><img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Partner" loading="lazy"></div>
+            <div class="client-logo"><img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Partner" loading="lazy"></div>
+            <div class="client-logo"><img src="assets/img/clients/clients-11.webp" class="img-fluid" alt="Partner" loading="lazy"></div>
+            <div class="client-logo"><img src="assets/img/clients/clients-14.webp" class="img-fluid" alt="Partner" loading="lazy"></div>
+            <div class="client-logo"><img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Partner" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-11">
+            <div class="stats-board">
+              <article class="stat-tile">
+                <div class="tile-head">
+                  <i class="bi bi-emoji-smile"></i>
+                  <div class="label">
+                    <h6 class="title">Satisfied Readers</h6>
+                    <small class="hint">Readers who found their next favourite</small>
+                  </div>
+                </div>
+                <div class="tile-metric">
+                  <span class="metric-number purecounter" data-purecounter-start="0" data-purecounter-end="1200" data-purecounter-duration="1"></span>
+                  <span class="metric-suffix">+</span>
+                </div>
+              </article>
+              <article class="stat-tile">
+                <div class="tile-head">
+                  <i class="bi bi-book-fill"></i>
+                  <div class="label">
+                    <h6 class="title">Books in Our Library</h6>
+                    <small class="hint">Across all genres and formats</small>
+                  </div>
+                </div>
+                <div class="tile-metric">
+                  <span class="metric-number purecounter" data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="1"></span>
+                  <span class="metric-suffix">+</span>
+                </div>
+              </article>
+              <article class="stat-tile">
+                <div class="tile-head">
+                  <i class="bi bi-chat-quote-fill"></i>
+                  <div class="label">
+                    <h6 class="title">Reader Reviews</h6>
+                    <small class="hint">Honest, community-written reviews</small>
+                  </div>
+                </div>
+                <div class="tile-metric">
+                  <span class="metric-number purecounter" data-purecounter-start="0" data-purecounter-end="3800" data-purecounter-duration="1"></span>
+                  <span class="metric-suffix">+</span>
+                </div>
+              </article>
+              <article class="stat-tile">
+                <div class="tile-head">
+                  <i class="bi bi-grid-fill"></i>
+                  <div class="label">
+                    <h6 class="title">Genres Covered</h6>
+                    <small class="hint">From Fantasy to Literary Fiction</small>
+                  </div>
+                </div>
+                <div class="tile-metric">
+                  <span class="metric-number purecounter" data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1"></span>
+                  <span class="metric-suffix">+</span>
+                </div>
+              </article>
+            </div>
+            <div class="legend-row mt-3">
+              <div class="legend-item"><span class="dot dot-primary"></span><span class="text">Stats updated monthly</span></div>
+              <div class="legend-item"><span class="dot dot-neutral"></span><span class="text">Community-verified reviews</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Genres Section (formerly Services) -->
+    <section id="services" class="services section">
+      <div class="container section-title">
+        <h2>Browse by Genre</h2>
+        <p>Whatever kind of story calls to you tonight, we have the perfect recommendation waiting.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-5">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-number">01</div>
+              <div class="service-icon-wrapper">
+                <div class="service-icon"><i class="bi bi-magic"></i></div>
+              </div>
+              <div class="service-content">
+                <h4>Fantasy &amp; Epic Fantasy</h4>
+                <p>Step into worlds where magic is real and the stakes could not be higher. From cosy portal fantasy to sprawling multi-book epics, we have the perfect doorway into another realm.</p>
+                <ul class="service-list">
+                  <li>High Fantasy</li>
+                  <li>Urban Fantasy</li>
+                  <li>Cosy Fantasy</li>
+                  <li>Dark Fantasy</li>
+                </ul>
+                <div class="service-pricing">
+                  <span class="price-tag">320+ Titles</span>
+                  <a href="#" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card featured">
+              <div class="service-number">02</div>
+              <div class="service-icon-wrapper">
+                <div class="service-icon"><i class="bi bi-heart-fill"></i></div>
+              </div>
+              <div class="service-content">
+                <h4>Romance &amp; Love Stories</h4>
+                <p>From slow-burn will-they-won't-they tension to sweeping historical courtships, our romance collection covers every flavour of love story imaginable.</p>
+                <ul class="service-list">
+                  <li>Contemporary Romance</li>
+                  <li>Historical Romance</li>
+                  <li>Paranormal Romance</li>
+                  <li>Romantic Suspense</li>
+                </ul>
+                <div class="service-pricing">
+                  <span class="price-tag" style="color:var(--gold-accent);">450+ Titles</span>
+                  <a href="#" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-number">03</div>
+              <div class="service-icon-wrapper">
+                <div class="service-icon"><i class="bi bi-search"></i></div>
+              </div>
+              <div class="service-content">
+                <h4>Mystery &amp; Crime</h4>
+                <p>Cunning detectives, cold cases, unreliable narrators, and plot twists you never saw coming. If you love the thrill of the unknown, our mystery shelf is your destination.</p>
+                <ul class="service-list">
+                  <li>Cosy Mystery</li>
+                  <li>Crime Fiction</li>
+                  <li>Whodunit</li>
+                  <li>Psychological Mystery</li>
+                </ul>
+                <div class="service-pricing">
+                  <span class="price-tag">280+ Titles</span>
+                  <a href="#" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-number">04</div>
+              <div class="service-icon-wrapper">
+                <div class="service-icon"><i class="bi bi-rocket-takeoff-fill"></i></div>
+              </div>
+              <div class="service-content">
+                <h4>Science Fiction</h4>
+                <p>Explore distant galaxies, dystopian futures, artificial intelligence, and the deepest questions of human existence — all through the thrilling lens of speculative fiction.</p>
+                <ul class="service-list">
+                  <li>Space Opera</li>
+                  <li>Dystopian Fiction</li>
+                  <li>Hard Sci-Fi</li>
+                  <li>Climate Fiction</li>
+                </ul>
+                <div class="service-pricing">
+                  <span class="price-tag">260+ Titles</span>
+                  <a href="#" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-number">05</div>
+              <div class="service-icon-wrapper">
+                <div class="service-icon"><i class="bi bi-hourglass-split"></i></div>
+              </div>
+              <div class="service-content">
+                <h4>Thriller &amp; Suspense</h4>
+                <p>Heart-pounding pacing, moral dilemmas, shadowy conspiracies, and protagonists with everything to lose. Our thriller picks will have you reading in one breathless sitting.</p>
+                <ul class="service-list">
+                  <li>Psychological Thriller</li>
+                  <li>Legal Thriller</li>
+                  <li>Political Suspense</li>
+                  <li>Domestic Noir</li>
+                </ul>
+                <div class="service-pricing">
+                  <span class="price-tag">310+ Titles</span>
+                  <a href="#" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service-card">
+              <div class="service-number">06</div>
+              <div class="service-icon-wrapper">
+                <div class="service-icon"><i class="bi bi-journal-richtext"></i></div>
+              </div>
+              <div class="service-content">
+                <h4>Historical &amp; Literary Fiction</h4>
+                <p>Richly researched worlds, beautiful prose, and stories that illuminate the human condition across centuries. Perfect for readers who want depth and resonance alongside a compelling narrative.</p>
+                <ul class="service-list">
+                  <li>Historical Fiction</li>
+                  <li>Literary Fiction</li>
+                  <li>Biographical Fiction</li>
+                  <li>War &amp; Politics</li>
+                </ul>
+                <div class="service-pricing">
+                  <span class="price-tag">230+ Titles</span>
+                  <a href="#" class="service-btn">Explore <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features section light-background">
+      <div class="container section-title">
+        <h2>Why Readers Love Midnight Reads</h2>
+        <p>Powerful tools and a warm community designed to help you discover, track, and savour your reading life.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-5 align-items-center">
+          <div class="col-lg-5">
+            <article class="intro-panel">
+              <figure class="preview-visual mb-4">
+                <img src="assets/img/features/features-3.webp" alt="Midnight Reads app preview" class="img-fluid rounded-4 shadow-sm">
+              </figure>
+              <div class="intro-content">
+                <h3 class="intro-title">Built for Book Lovers, By Book Lovers</h3>
+                <p class="intro-text">Every feature on Midnight Reads was designed with one question in mind: what would make a reader's life better? The result is a platform that feels less like software and more like your most well-read friend.</p>
+                <ul class="intro-highlights list-unstyled mt-3">
+                  <li><i class="bi bi-check-circle-fill"></i> Recommendations that actually match your taste — not just what's popular</li>
+                  <li><i class="bi bi-check-circle-fill"></i> A reading tracker to log, review, and revisit every book you've read</li>
+                  <li><i class="bi bi-check-circle-fill"></i> Community lists and reading challenges to keep you motivated</li>
+                </ul>
+                <div class="mt-4">
+                  <a href="#contact" class="btn cta-btn"><i class="bi bi-box-arrow-in-right me-2"></i>Join Free</a>
+                  <a href="#services" class="btn link-btn ms-2">Browse Genres <i class="bi bi-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-7">
+            <div class="feature-grid">
+              <div class="feature-item">
+                <div class="f-icon badge-blue"><i class="bi bi-person-heart"></i></div>
+                <div class="f-body">
+                  <h4 class="f-title">Taste-Matched Picks</h4>
+                  <p class="f-text">Our recommendation engine learns from your ratings and reading history to surface books you're genuinely likely to love.</p>
+                  <div class="f-meta"><span><i class="bi bi-speedometer2 me-1"></i>Gets smarter over time</span></div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="f-icon badge-green"><i class="bi bi-shield-check"></i></div>
+                <div class="f-body">
+                  <h4 class="f-title">Spoiler-Free Reviews</h4>
+                  <p class="f-text">All community reviews are tagged and moderated. Read what others thought without ruining the surprise of a great plot twist.</p>
+                  <div class="f-meta"><span><i class="bi bi-eye-slash me-1"></i>Spoilers always hidden</span></div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="f-icon badge-purple"><i class="bi bi-grid-1x2-fill"></i></div>
+                <div class="f-body">
+                  <h4 class="f-title">Genre Deep-Dives</h4>
+                  <p class="f-text">Curated starter guides and reading pathways for every major genre, so you always know where to begin and what to read next.</p>
+                  <div class="f-meta"><span><i class="bi bi-map me-1"></i>20+ genre guides</span></div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="f-icon badge-orange"><i class="bi bi-bar-chart-fill"></i></div>
+                <div class="f-body">
+                  <h4 class="f-title">Reading Stats &amp; Insights</h4>
+                  <p class="f-text">Track your reading pace, favourite genres, and annual goals. See your reading year come to life in beautiful charts.</p>
+                  <div class="f-meta"><span><i class="bi bi-graph-up-arrow me-1"></i>Annual reading wrapped</span></div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="f-icon badge-cyan"><i class="bi bi-bell-fill"></i></div>
+                <div class="f-body">
+                  <h4 class="f-title">New Release Alerts</h4>
+                  <p class="f-text">Follow your favourite authors and get notified the moment their next book drops. Never miss a new release again.</p>
+                  <div class="f-meta"><span><i class="bi bi-envelope-check me-1"></i>Instant notifications</span></div>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="f-icon badge-pink"><i class="bi bi-people-fill"></i></div>
+                <div class="f-body">
+                  <h4 class="f-title">Reading Community</h4>
+                  <p class="f-text">Join book clubs, participate in reading challenges, and share lists with other readers who love the same stories you do.</p>
+                  <div class="f-meta"><span><i class="bi bi-chat-dots-fill me-1"></i>Active community</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="assurance-banner">
+              <div class="assurance-icon"><i class="bi bi-award-fill"></i></div>
+              <div class="assurance-content">
+                <h5>Trusted by 1,200+ Passionate Readers</h5>
+                <p>Midnight Reads is rated 4.8 stars by our community — built with love for everyone who has ever stayed up too late because they couldn't put a book down.</p>
+              </div>
+              <a href="#testimonials" class="btn banner-btn"><i class="bi bi-arrow-right-circle me-1"></i> See Reviews</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section light-background">
+      <div class="container section-title">
+        <h2>What Our Readers Say</h2>
+        <p>Thousands of readers have found their next favourite novel through Midnight Reads. Here's what some of them had to say.</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="critic-reviews mb-5">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <div class="critic-review">
+                    <div class="review-quote">"</div>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>Midnight Reads has completely transformed the way I discover books. The genre guides alone are worth bookmarking — they turned me from a casual reader into someone who now reads 40 books a year.</p>
+                    <div class="critic-info">
+                      <div class="critic-name">The Reading Dispatch</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="critic-review">
+                    <div class="review-quote">"</div>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                    </div>
+                    <p>Finally, a recommendation platform that doesn't just push bestsellers. Midnight Reads actually digs into what you enjoy and surfaces hidden gems you'd never find on your own. Genuinely impressive.</p>
+                    <div class="critic-info">
+                      <div class="critic-name">Literary Wanderer Blog</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="critic-review">
+                    <div class="review-quote">"</div>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>The community features on Midnight Reads are brilliant — reading challenges, book clubs, shared lists. It's brought back the social joy of reading that I thought I'd lost after leaving university.</p>
+                    <div class="critic-info">
+                      <div class="critic-name">Pages &amp; Coffee Podcast</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonials-container">
+              <div class="swiper testimonials-slider init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {"loop":true,"speed":600,"autoplay":{"delay":5000},"slidesPerView":1,"spaceBetween":24,"pagination":{"el":".swiper-pagination","type":"bullets","clickable":true},"breakpoints":{"768":{"slidesPerView":2},"992":{"slidesPerView":3}}}
+                </script>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                      <p>I told Midnight Reads I liked slow-burn romance and gothic settings, and within minutes I had a reading list that felt made just for me. I've already torn through four of the recommendations and loved every single one.</p>
+                      <div class="testimonial-profile">
+                        <img src="assets/img/person/person-f-1.webp" alt="Amara O." class="img-fluid rounded-circle">
+                        <div><h3>Amara O.</h3><h4>Romance Reader, Nairobi</h4></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                      <p>As someone who reads almost exclusively Science Fiction, I was worried the recommendations would be generic. Instead, Midnight Reads found me three debut authors I'd never heard of — all of whom became instant favourites.</p>
+                      <div class="testimonial-profile">
+                        <img src="assets/img/person/person-m-2.webp" alt="James K." class="img-fluid rounded-circle">
+                        <div><h3>James K.</h3><h4>Sci-Fi Enthusiast, London</h4></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                      <p>The spoiler-free review system is a game changer. I can actually read what people thought about a book before I pick it up, without having the whole story ruined for me. Such a thoughtful feature.</p>
+                      <div class="testimonial-profile">
+                        <img src="assets/img/person/person-f-3.webp" alt="Sofia M." class="img-fluid rounded-circle">
+                        <div><h3>Sofia M.</h3><h4>Book Club President, Lagos</h4></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                      <p>I used to spend half an hour on Goodreads trying to decide what to read next. Now I open Midnight Reads and have my next five books lined up in under two minutes. It genuinely understands my taste.</p>
+                      <div class="testimonial-profile">
+                        <img src="assets/img/person/person-m-4.webp" alt="Daniel W." class="img-fluid rounded-circle">
+                        <div><h3>Daniel W.</h3><h4>Mystery &amp; Thriller Fan, Cape Town</h4></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination mt-4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <div class="overall-rating">
+              <div class="rating-number">4.8</div>
+              <div class="rating-stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              </div>
+              <p class="mt-2" style="color:var(--text-muted);font-size:.9rem;">Based on 230+ community reviews</p>
+              <div class="rating-platforms">
+                <span>Goodreads</span>
+                <span>Amazon</span>
+                <span>Barnes &amp; Noble</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section dark-background">
+      <div class="container">
+        <div class="cta-wrapper">
+          <div class="content-block">
+            <div class="row align-items-center">
+              <div class="col-lg-7">
+                <div class="text-content">
+                  <div class="section-label mb-3"><span>Start Reading Better, Today</span></div>
+                  <h2>Your Next Favourite Novel<span class="accent-text"> Is Waiting For You</span></h2>
+                  <p>Stop scrolling aimlessly through endless book lists. Let Midnight Reads guide you to the exact story you need right now — whether that's an escapist fantasy, a gripping thriller, or a romance that makes your heart ache.</p>
+                  <div class="benefits-list mt-3">
+                    <div class="benefit-row">
+                      <div class="benefit-item"><div class="check-icon"><i class="bi bi-check2"></i></div><span>Free to join — no credit card needed</span></div>
+                      <div class="benefit-item"><div class="check-icon"><i class="bi bi-check2"></i></div><span>Personalised recommendations instantly</span></div>
+                    </div>
+                    <div class="benefit-row">
+                      <div class="benefit-item"><div class="check-icon"><i class="bi bi-check2"></i></div><span>Spoiler-free community reviews</span></div>
+                      <div class="benefit-item"><div class="check-icon"><i class="bi bi-check2"></i></div><span>20+ genres, 5,000+ titles</span></div>
+                    </div>
+                  </div>
+                  <div class="action-group">
+                    <a href="#contact" class="btn btn-primary-action">Start Your Reading Journey</a>
+                    <a href="#services" class="btn btn-text-link">
+                      <i class="bi bi-book-fill"></i>c
+                    </a>
+                  </div>
+                  <div class="trust-indicators mt-4">
+                    <div class="indicator"><div class="metric">1,200+</div><div class="label">Active Readers</div></div>
+                    <div class="separator"></div>
+                    <div class="indicator"><div class="metric">4.8★</div><div class="label">Average Rating</div></div>
+                    <div class="separator"></div>
+                    <div class="indicator"><div class="metric">Free</div><div class="label">To Join</div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="visual-section">
+                  <div class="image-container">
+                    <img src="assets/img/cta/cta-4.webp" alt="Reader discovering a great novel" class="main-visual">
+                    <div class="floating-badge badge-1">
+                      <div class="badge-icon"><i class="bi bi-award-fill"></i></div>
+                      <div class="badge-text"><div class="badge-title">Top Rated</div><div class="badge-subtitle">Recommendation Platform</div></div>
+                    </div>
+                    <div class="floating-badge badge-2">
+                      <div class="badge-icon"><i class="bi bi-people-fill"></i></div>
+                      <div class="badge-text"><div class="badge-title">1,200+</div><div class="badge-subtitle">Active Readers</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+      <div class="container section-title">
+        <h2>Meet the Team</h2>
+        <p>We're a small team of passionate readers, writers, and developers who believe the right book at the right time can genuinely change a life.</p>
+      </div>
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100">
+              <figure class="member-media">
+                <img src="assets/img/person/person-f-9.webp" class="img-fluid" alt="Ava Thompson">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Goodreads"><i class="bi bi-book"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Ava Thompson</h3>
+                <p class="member-role">Co-Founder &amp; Head of Curation</p>
+                <p class="member-bio">Former librarian and lifelong fantasy reader. Ava built the genre guide system from scratch and personally vets every Editor's Pick. She has read over 400 books in the past five years.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100">
+              <figure class="member-media">
+                <img src="assets/img/person/person-m-7.webp" class="img-fluid" alt="Logan Rivera">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Goodreads"><i class="bi bi-book"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Logan Rivera</h3>
+                <p class="member-role">Lead Product Designer</p>
+                <p class="member-bio">A UX designer who moonlights as a crime fiction addict. Logan shaped every reader-facing feature on the platform, obsessing over making book discovery feel effortless and joyful.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100">
+              <figure class="member-media">
+                <img src="assets/img/person/person-f-12.webp" class="img-fluid" alt="Mia Patel">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Goodreads"><i class="bi bi-book"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Mia Patel</h3>
+                <p class="member-role">Engineering Lead</p>
+                <p class="member-bio">The technical brain behind Midnight Reads' recommendation engine. Mia is a literary fiction devotee and firmly believes the best code, like the best novels, should be impossible to put down.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="member-card h-100">
+              <figure class="member-media">
+                <img src="assets/img/person/person-m-11.webp" class="img-fluid" alt="Ethan Brooks">
+                <ul class="social-list">
+                  <li><a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a></li>
+                  <li><a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a></li>
+                  <li><a href="#" aria-label="Github"><i class="bi bi-github"></i></a></li>
+                </ul>
+              </figure>
+              <div class="member-content">
+                <h3 class="member-name">Ethan Brooks</h3>
+                <p class="member-role">Full-Stack Developer</p>
+                <p class="member-bio">Ethan keeps the lights on and the pages turning. A science fiction reader who once finished a 900-page novel on a transatlantic flight, he brings the same relentless focus to every line of code he writes.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="row g-4 mt-2">
+          <div class="col-lg-8">
+            <div class="team-highlight d-flex align-items-center">
+              <div class="icon-wrap"><i class="bi bi-people"></i></div>
+              <div class="copy">
+                <h4 class="title">A small team with an enormous love of books</h4>
+                <p class="desc mb-0">We're remote-first, reader-first, and endlessly passionate about connecting people with stories. Every decision we make — from features to recommendations — is guided by one question: does this help someone find a great book?</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <aside class="join-card w-100">
+              <div class="join-content">
+                <h5 class="mb-2">Love books? Join us.</h5>
+                <p class="mb-3">We're always looking for passionate readers and curious builders to help grow Midnight Reads. Check our open roles below.</p>
+                <a href="#" class="btn btn-join"><i class="bi bi-send me-1"></i>Open Positions</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+      <div class="container section-title">
+        <h2>Simple, Honest Pricing</h2>
+        <p>Start free and upgrade whenever you're ready. No hidden fees, no complicated tiers — just more great books.</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card starter">
+              <div class="plan-header">
+                <h3 class="plan-name">Reader</h3>
+                <p class="plan-description">Perfect for casual readers who want personalised recommendations without commitment.</p>
+              </div>
+              <div class="pricing-display">
+                <div class="price"><span class="currency">$</span><span class="amount">0</span><span class="period">/forever</span></div>
+              </div>
+              <div class="features-list">
+                <div class="feature"><i class="bi bi-check2"></i><span>Unlimited genre browsing</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>5 personalised recommendations/month</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Community reviews access</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Reading list (up to 20 books)</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Weekly newsletter</span></div>
+              </div>
+              <a href="#" class="btn-plan">Get Started Free</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card professional featured">
+              <div class="plan-header">
+                <div class="featured-badge">Most Popular</div>
+                <h3 class="plan-name">Book Lover</h3>
+                <p class="plan-description">For avid readers who want the full experience — unlimited picks, tracking, and community.</p>
+              </div>
+              <div class="pricing-display">
+                <div class="price"><span class="currency">$</span><span class="amount">9</span><span class="period">/mo</span></div>
+              </div>
+              <div class="features-list">
+                <div class="feature"><i class="bi bi-check2"></i><span>Unlimited recommendations</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Full reading tracker &amp; stats</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>New release author alerts</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Unlimited reading lists</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Book club access</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Annual reading wrapped report</span></div>
+              </div>
+              <a href="#" class="btn-plan">Start Free Trial</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="pricing-card enterprise">
+              <div class="plan-header">
+                <h3 class="plan-name">Book Club</h3>
+                <p class="plan-description">Everything you need to run a thriving book club — shared lists, discussion tools, and bulk picks.</p>
+              </div>
+              <div class="pricing-display">
+                <div class="price"><span class="currency">$</span><span class="amount">29</span><span class="period">/mo</span></div>
+              </div>
+              <div class="features-list">
+                <div class="feature"><i class="bi bi-check2"></i><span>Up to 20 club members</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Shared group reading lists</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Discussion forums per book</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Monthly curated club picks</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Priority support</span></div>
+                <div class="feature"><i class="bi bi-check2"></i><span>Dedicated account manager</span></div>
+              </div>
+              <a href="#contact" class="btn-plan">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+          <div class="col-lg-8 text-center">
+            <div class="pricing-footer">
+              <p class="guarantee-text">14-day free trial on Book Lover plan &nbsp;•&nbsp; No credit card required &nbsp;•&nbsp; Cancel anytime</p>
+              <p class="contact-text">Running a school, library, or large organisation? <a href="#contact">Let's talk about a custom plan.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq section">
+      <div class="container section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know before diving in. Can't find your answer? Drop us a message anytime.</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="faq-wrapper">
+              <div class="faq-item faq-active">
+                <div class="faq-header">
+                  <div class="faq-icon"><i class="bi bi-question-circle"></i></div>
+                  <h4>How does Midnight Reads recommend novels to me?</h4>
+                  <div class="faq-toggle"><i class="bi bi-plus"></i><i class="bi bi-dash"></i></div>
+                </div>
+                <div class="faq-content">
+                  <div class="content-inner"><p>When you sign up, we ask about your favourite genres, authors, and the moods you read in. As you rate books and build your reading list, our recommendation engine learns your taste and gets sharper over time. The more you interact, the better your picks become — think of it as a friend who's read everything and remembers exactly what you loved.</p></div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-icon"><i class="bi bi-question-circle"></i></div>
+                  <h4>Is Midnight Reads free to use?</h4>
+                  <div class="faq-toggle"><i class="bi bi-plus"></i><i class="bi bi-dash"></i></div>
+                </div>
+                <div class="faq-content">
+                  <div class="content-inner"><p>Yes — our Reader plan is completely free, forever. You get unlimited genre browsing, five personalised recommendations each month, and full access to community reviews. For unlimited recommendations, reading tracking, and book club features, you can upgrade to the Book Lover plan for $9/month with a 14-day free trial.</p></div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-icon"><i class="bi bi-question-circle"></i></div>
+                  <h4>Can I trust the community reviews to be spoiler-free?</h4>
+                  <div class="faq-toggle"><i class="bi bi-plus"></i><i class="bi bi-dash"></i></div>
+                </div>
+                <div class="faq-content">
+                  <div class="content-inner"><p>Absolutely. Every review on Midnight Reads goes through our spoiler-tagging system. Reviewers are required to flag any major plot reveals, and our moderation team monitors for unmarked spoilers. You can browse and read reviews confidently without worrying about having key plot points revealed before you've had the chance to experience them yourself.</p></div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-icon"><i class="bi bi-question-circle"></i></div>
+                  <h4>Do you only recommend popular or well-known novels?</h4>
+                  <div class="faq-toggle"><i class="bi bi-plus"></i><i class="bi bi-dash"></i></div>
+                </div>
+                <div class="faq-content">
+                  <div class="content-inner"><p>Not at all — finding hidden gems is one of the things we're proudest of. While we do feature bestsellers and award winners, a significant portion of our recommendations are debut novels, international fiction, and under-the-radar titles that tend to fly under the radar on mainstream platforms. We believe great stories deserve to be found, regardless of how many copies they've sold.</p></div>
+                </div>
+              </div>
+              <div class="faq-item">
+                <div class="faq-header">
+                  <div class="faq-icon"><i class="bi bi-question-circle"></i></div>
+                  <h4>How do I start a book club on Midnight Reads?</h4>
+                  <div class="faq-toggle"><i class="bi bi-plus"></i><i class="bi bi-dash"></i></div>
+                </div>
+                <div class="faq-content">
+                  <div class="content-inner"><p>Book clubs are available on our Book Club plan ($29/month). Once subscribed, you can create a club, invite up to 20 members via email or a shareable link, set a monthly reading pick, and access dedicated discussion forums for each book. We also provide monthly curated suggestions to help your club decide what to read next if you'd like a helping hand.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section dark-background">
+      <div class="container section-title">
+        <h2>Get in Touch</h2>
+        <p>Have a question, a book recommendation to share, or want to partner with us? We'd love to hear from you.</p>
+      </div>
+      <div class="container position-relative">
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="info-item d-flex">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div><h3>Our Home</h3><p>Midnight Reads is a fully remote team, spread across time zones and book shelves worldwide.</p></div>
+            </div>
+            <div class="info-item d-flex">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div><h3>Email Us</h3><p>hello@midnightreads.com</p></div>
+            </div>
+            <div class="info-item d-flex">
+              <i class="bi bi-clock flex-shrink-0"></i>
+              <div><h3>Response Time</h3><p>We typically reply within one business day. For urgent matters, mark your email "Urgent" and we'll prioritise it.</p></div>
+            </div>
+            <div class="info-item d-flex">
+              <i class="bi bi-instagram flex-shrink-0"></i>
+              <div><h3>Follow Along</h3><p>@midnightreads — daily book recommendations, reading tips, and behind-the-scenes from our team of readers.</p></div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="subject" placeholder="What's this about? (e.g. Partnership, Support, General)">
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Tell us what's on your mind — or share a book recommendation you think we need to know about…" required=""></textarea>
+                </div>
+                <div class="col-md-12 text-center">
+                  <div class="loading">Sending…</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent — we'll be in touch soon!</div>
+                  <button type="submit">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <a href="index.html" class="logo d-flex align-items-center mb-3 text-decoration-none">
+              <span class="sitename">Midnight Reads</span>
+            </a>
+            <p class="tagline">Helping readers discover their next favourite novel — one honest recommendation at a time. Built by book lovers, for book lovers.</p>
+            <div class="social-links mt-4">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="Goodreads"><i class="bi bi-book"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="footer-links-grid">
+            <div class="row">
+              <div class="col-6 col-md-4">
+                <h5>Discover</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">Fantasy</a></li>
+                  <li><a href="#">Romance</a></li>
+                  <li><a href="#">Mystery</a></li>
+                  <li><a href="#">Sci-Fi</a></li>
+                  <li><a href="#">Thrillers</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4">
+                <h5>Platform</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">How It Works</a></li>
+                  <li><a href="#">Book Clubs</a></li>
+                  <li><a href="#">Editor's Picks</a></li>
+                  <li><a href="#">Reading Guides</a></li>
+                  <li><a href="#">Pricing</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md-4">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Our Team</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Use</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <div class="footer-cta">
+            <h5>Start Reading</h5>
+            <a href="#contact" class="btn btn-outline">Join Midnight Reads</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="footer-bottom-content">
+              <p class="mb-0">© 2026 <span class="sitename" style="color:var(--gold-accent);">Midnight Reads</span>. All rights reserved.</p>
+              <div class="credits">Designed with ❤️ for readers everywhere</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"><div></div><div></div><div></div><div></div></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('faq-active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('faq-active'));
+        if (!isActive) item.classList.add('faq-active');
+      });
+    });
+
+    // Scroll top button
+    const scrollTopBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
