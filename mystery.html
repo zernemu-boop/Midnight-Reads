@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mystery & Crime — Midnight Reads</title>
+  <meta name="description" content="Explore our curated Mystery & Crime novel recommendations at Midnight Reads.">
+  <link rel="icon" href="assets/img/Faviconn.png">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .genre-hero { background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #2d2d2d 100%); padding: 80px 0 60px; color: #fff; }
+    .genre-hero .genre-icon { font-size: 3rem; color: #c9a227; margin-bottom: 16px; }
+    .genre-hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 12px; }
+    .genre-hero p { font-size: 1.1rem; opacity: .85; max-width: 620px; }
+    .genre-hero .badge-count { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 6px 18px; border-radius: 30px; font-size: .9rem; display: inline-block; margin-top: 16px; }
+    .subgenre-tabs { background: #f8f9fa; border-bottom: 1px solid #e9ecef; padding: 0; }
+    .subgenre-tabs .nav-link { border-radius: 0; border: none; padding: 14px 22px; font-weight: 500; color: #555; transition: all .2s; }
+    .subgenre-tabs .nav-link.active, .subgenre-tabs .nav-link:hover { color: #c9a227; border-bottom: 3px solid #c9a227; background: transparent; }
+    .book-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,.08); overflow: hidden; transition: transform .25s, box-shadow .25s; height: 100%; }
+    .book-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(0,0,0,.14); }
+    .book-card .book-cover { background: linear-gradient(135deg, #1a1a1a, #3d3d3d); height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .book-card .book-cover i { font-size: 4rem; color: rgba(201,162,39,.5); }
+    .book-card .book-cover .genre-badge { position: absolute; top: 12px; right: 12px; background: #c9a227; color: #1a1a2e; font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; }
+    .book-card .book-body { padding: 20px; }
+    .book-card .book-title { font-size: 1.05rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+    .book-card .book-author { font-size: .88rem; color: #c9a227; font-weight: 600; margin-bottom: 10px; }
+    .book-card .book-desc { font-size: .88rem; color: #666; line-height: 1.55; margin-bottom: 14px; }
+    .book-card .book-meta { display: flex; align-items: center; justify-content: space-between; font-size: .82rem; color: #888; }
+    .book-card .stars { color: #c9a227; }
+    .books-section { padding: 60px 0; }
+    .section-intro { margin-bottom: 40px; }
+    .section-intro h2 { font-size: 1.7rem; font-weight: 700; color: #1a1a2e; }
+    .section-intro p { color: #666; }
+    .back-link { color: #c9a227; font-weight: 600; text-decoration: none; }
+    .back-link:hover { color: #a07d1a; }
+    .back-link i { margin-right: 6px; }
+    .cta-band { background: #1a1a1a; color: #fff; padding: 50px 0; text-align: center; }
+    .cta-band h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 10px; }
+    .cta-band p { opacity: .8; margin-bottom: 24px; }
+    .cta-band .btn-cta { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; }
+    .cta-band .btn-cta:hover { background: #a07d1a; }
+  </style>
+</head>
+<body>
+  <header id="header" class="header sticky-top bg-dark-subtle">
+    <div class="container-fluid container-xl position-relative">
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
+            <path d="M30 25 L50 15 L70 25 V75 L50 65 L30 75 Z" fill="#c9a227"/>
+            <path d="M50 15 V65" stroke="#1a1a2e" stroke-width="2"/>
+            <circle cx="75" cy="25" r="6" fill="#ffffff"/>
+          </svg>
+          <div style="margin-left:10px;"><h1 class="sitename mb-0">Midnight Reads</h1><small style="color:#c9a227;">Discover Your Next Adventure</small></div>
+        </a>
+      </div>
+    </div>
+    <div class="nav-wrap">
+      <div class="container d-flex justify-content-center position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services" class="active">Genres</a></li>
+            <li><a href="index.html#features">Why Us</a></li>
+            <li><a href="index.html#team">Our Team</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="genre-hero">
+      <div class="container">
+        <a href="index.html#services" class="back-link mb-4 d-inline-block"><i class="bi bi-arrow-left"></i> Back to Genres</a>
+        <div class="genre-icon"><i class="bi bi-search"></i></div>
+        <h1>Mystery & Crime</h1>
+        <p>Cunning detectives, cold cases, unreliable narrators, and plot twists you never saw coming. If you love the thrill of the unknown, our mystery shelf is your destination.</p>
+        <span class="badge-count">280+ Titles</span>
+      </div>
+    </section>
+
+    <div class="subgenre-tabs sticky-top" style="top:70px;z-index:100;">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link active" href="#" onclick="filterBooks('Cosy Mystery', event)">Cosy Mystery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('Crime Fiction', event)">Crime Fiction</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('Psychological Mystery', event)">Psychological</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('Whodunit', event)">Whodunit</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('All', event)">All</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="books-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Our Mystery Picks</h2>
+          <p>From cosy village detectives to dark psychological thrillers — something for every mystery lover.</p>
+        </div>
+        <div class="row g-4" id="booksGrid">
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Mystery">
+            <div class="book-card">
+              <div class="book-cover"><i class="bi bi-search"></i><span class="genre-badge">Cosy Mystery</span></div>
+              <div class="book-body">
+                <div class="book-title">The Thursday Murder Club</div>
+                <div class="book-author">Richard Osman</div>
+                <div class="book-desc">Four retirees in a quiet village meet weekly to solve cold cases — until a real murder lands on their doorstep. Utterly charming.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.9 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Mystery">
+            <div class="book-card">
+              <div class="book-cover"><i class="bi bi-search"></i><span class="genre-badge">Cosy Mystery</span></div>
+              <div class="book-body">
+                <div class="book-title">The No. 1 Ladies' Detective Agency</div>
+                <div class="book-author">Alexander McCall Smith</div>
+                <div class="book-desc">Precious Ramotswe opens Botswana's first detective agency for women and uses sharp wit and local wisdom to solve her cases.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span><span>4.7 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Crime Fiction">
+            <div class="book-card">
+              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a0a,#2d4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Crime Fiction</span></div>
+              <div class="book-body">
+                <div class="book-title">The Girl with the Dragon Tattoo</div>
+                <div class="book-author">Stieg Larsson</div>
+                <div class="book-desc">A disgraced journalist and a brilliant hacker investigate a decades-old disappearance in a powerful Swedish family — a modern classic.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.8 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Crime Fiction">
+            <div class="book-card">
+              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a0a,#2d4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Crime Fiction</span></div>
+              <div class="book-body">
+                <div class="book-title">In the Woods</div>
+                <div class="book-author">Tana French</div>
+                <div class="book-desc">A detective returns to investigate a murder at the site where he lost his friends in childhood — atmospheric, devastating, and brilliant.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.8 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Psychological Mystery">
+            <div class="book-card">
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1a3d,#4a2a6b);"><i class="bi bi-search"></i><span class="genre-badge">Psychological</span></div>
+              <div class="book-body">
+                <div class="book-title">Gone Girl</div>
+                <div class="book-author">Gillian Flynn</div>
+                <div class="book-desc">When Amy Dunne disappears on their fifth anniversary, her husband becomes the prime suspect — a masterclass in unreliable narrators.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.9 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Psychological Mystery">
+            <div class="book-card">
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1a3d,#4a2a6b);"><i class="bi bi-search"></i><span class="genre-badge">Psychological</span></div>
+              <div class="book-body">
+                <div class="book-title">The Silent Patient</div>
+                <div class="book-author">Alex Michaelides</div>
+                <div class="book-desc">A famous painter shoots her husband and then never speaks again — and the therapist obsessed with uncovering the truth may be hiding something too.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span><span>4.7 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Whodunit">
+            <div class="book-card">
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d2a0a,#6b4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Whodunit</span></div>
+              <div class="book-body">
+                <div class="book-title">And Then There Were None</div>
+                <div class="book-author">Agatha Christie</div>
+                <div class="book-desc">Ten strangers are lured to an isolated island and begin to die one by one — the best-selling mystery novel of all time, and still unbeatable.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>5.0 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Whodunit">
+            <div class="book-card">
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d2a0a,#6b4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Whodunit</span></div>
+              <div class="book-body">
+                <div class="book-title">Knives Out</div>
+                <div class="book-author">Rian Johnson (novelisation)</div>
+                <div class="book-desc">A renowned crime novelist is found dead after his birthday party. Was it murder or suicide? A brilliant detective is determined to find out.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span><span>4.6 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="container">
+        <h3>Want personalised Mystery picks?</h3>
+        <p>Tell us what you love and we'll find your perfect whodunit.</p>
+        <a href="contact.html" class="btn-cta">Get My Recommendations</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4"><div class="footer-brand"><a href="index.html" class="logo d-flex align-items-center mb-3"><span class="sitename">Midnight Reads</span></a><p class="tagline">Helping readers discover their next favourite novel.</p></div></div>
+        <div class="col-lg-4"><h5>Explore More Genres</h5><ul class="list-unstyled"><li><a href="fantasy.html">Fantasy</a></li><li><a href="romance.html">Romance</a></li><li><a href="scifi.html">Science Fiction</a></li><li><a href="thriller.html">Thriller</a></li><li><a href="historical.html">Historical Fiction</a></li></ul></div>
+        <div class="col-lg-4"><div class="footer-cta"><h5>Start Reading</h5><a href="contact.html" class="btn btn-outline">Join Midnight Reads</a></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><div class="footer-bottom-content"><p class="mb-0">© <span class="sitename">Midnight Reads</span>. All rights reserved.</p><div class="credits">Designed with ❤️ for readers everywhere</div></div></div></div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function filterBooks(subgenre, e) {
+      if (e) e.preventDefault();
+      document.querySelectorAll('.subgenre-tabs .nav-link').forEach(t => t.classList.remove('active'));
+      if (e) e.target.classList.add('active');
+      document.querySelectorAll('.book-item').forEach(item => {
+        item.style.display = (subgenre === 'All' || item.dataset.subgenre === subgenre) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>

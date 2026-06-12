@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Thriller & Suspense — Midnight Reads</title>
+  <link rel="icon" href="assets/img/Faviconn.png">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .genre-hero { background: linear-gradient(135deg, #0d0d0d 0%, #1a0a00 50%, #2d1000 100%); padding: 80px 0 60px; color: #fff; }
+    .genre-hero .genre-icon { font-size: 3rem; color: #ff6b35; margin-bottom: 16px; }
+    .genre-hero h1 { font-size: 2.6rem; font-weight: 700; margin-bottom: 12px; }
+    .genre-hero p { font-size: 1.1rem; opacity: .85; max-width: 620px; }
+    .genre-hero .badge-count { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 6px 18px; border-radius: 30px; font-size: .9rem; display: inline-block; margin-top: 16px; }
+    .subgenre-tabs { background: #f8f9fa; border-bottom: 1px solid #e9ecef; }
+    .subgenre-tabs .nav-link { border-radius: 0; border: none; padding: 14px 22px; font-weight: 500; color: #555; transition: all .2s; }
+    .subgenre-tabs .nav-link.active, .subgenre-tabs .nav-link:hover { color: #c9a227; border-bottom: 3px solid #c9a227; background: transparent; }
+    .book-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,.08); overflow: hidden; transition: transform .25s, box-shadow .25s; height: 100%; }
+    .book-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(0,0,0,.14); }
+    .book-card .book-cover { background: linear-gradient(135deg, #1a0a00, #3d1a00); height: 200px; display: flex; align-items: center; justify-content: center; position: relative; }
+    .book-card .book-cover i { font-size: 4rem; color: rgba(255,107,53,.4); }
+    .book-card .book-cover .genre-badge { position: absolute; top: 12px; right: 12px; background: #c9a227; color: #1a1a2e; font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; }
+    .book-card .book-body { padding: 20px; }
+    .book-card .book-title { font-size: 1.05rem; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+    .book-card .book-author { font-size: .88rem; color: #c9a227; font-weight: 600; margin-bottom: 10px; }
+    .book-card .book-desc { font-size: .88rem; color: #666; line-height: 1.55; margin-bottom: 14px; }
+    .book-card .book-meta { display: flex; align-items: center; justify-content: space-between; font-size: .82rem; color: #888; }
+    .book-card .stars { color: #c9a227; }
+    .books-section { padding: 60px 0; }
+    .section-intro { margin-bottom: 40px; }
+    .section-intro h2 { font-size: 1.7rem; font-weight: 700; color: #1a1a2e; }
+    .section-intro p { color: #666; }
+    .back-link { color: #ff6b35; font-weight: 600; text-decoration: none; }
+    .back-link:hover { color: #fff; }
+    .back-link i { margin-right: 6px; }
+    .cta-band { background: #0d0d0d; color: #fff; padding: 50px 0; text-align: center; }
+    .cta-band h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 10px; }
+    .cta-band p { opacity: .8; margin-bottom: 24px; }
+    .cta-band .btn-cta { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; }
+    .cta-band .btn-cta:hover { background: #a07d1a; }
+  </style>
+</head>
+<body>
+  <header id="header" class="header sticky-top bg-dark-subtle">
+    <div class="container-fluid container-xl position-relative">
+      <div class="top-row d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#1a1a2e"/><path d="M30 25 L50 15 L70 25 V75 L50 65 L30 75 Z" fill="#c9a227"/><path d="M50 15 V65" stroke="#1a1a2e" stroke-width="2"/><circle cx="75" cy="25" r="6" fill="#ffffff"/></svg>
+          <div style="margin-left:10px;"><h1 class="sitename mb-0">Midnight Reads</h1><small style="color:#c9a227;">Discover Your Next Adventure</small></div>
+        </a>
+      </div>
+    </div>
+    <div class="nav-wrap">
+      <div class="container d-flex justify-content-center position-relative">
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services" class="active">Genres</a></li>
+            <li><a href="index.html#features">Why Us</a></li>
+            <li><a href="index.html#team">Our Team</a></li>
+            <li><a href="index.html#testimonials">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="genre-hero">
+      <div class="container">
+        <a href="index.html#services" class="back-link mb-4 d-inline-block"><i class="bi bi-arrow-left"></i> Back to Genres</a>
+        <div class="genre-icon"><i class="bi bi-hourglass-split"></i></div>
+        <h1>Thriller & Suspense</h1>
+        <p>Heart-pounding pacing, moral dilemmas, shadowy conspiracies, and protagonists with everything to lose. Our thriller picks will have you reading in one breathless sitting.</p>
+        <span class="badge-count">310+ Titles</span>
+      </div>
+    </section>
+
+    <div class="subgenre-tabs sticky-top" style="top:70px;z-index:100;">
+      <div class="container">
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link active" href="#" onclick="filterBooks('Psychological Thriller', event)">Psychological</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('Legal Thriller', event)">Legal</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('Political Suspense', event)">Political</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('Domestic Noir', event)">Domestic Noir</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" onclick="filterBooks('All', event)">All</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="books-section">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Our Thriller Picks</h2>
+          <p>Prepare to lose sleep — every one of these will keep you turning pages until dawn.</p>
+        </div>
+        <div class="row g-4">
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Psychological Thriller">
+            <div class="book-card"><div class="book-cover"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Psychological</span></div>
+              <div class="book-body"><div class="book-title">Behind Closed Doors</div><div class="book-author">B.A. Paris</div>
+                <div class="book-desc">The perfect marriage is hiding a terrible secret — a claustrophobic, devastating thriller that will make you question everything you think you know about the couple next door.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span><span>4.7 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Psychological Thriller">
+            <div class="book-card"><div class="book-cover"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Psychological</span></div>
+              <div class="book-body"><div class="book-title">The Woman in the Window</div><div class="book-author">A.J. Finn</div>
+                <div class="book-desc">An agoraphobic woman believes she witnesses a crime through her window — but can she trust what she saw? A twisty, Hitchcock-inspired thriller.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.8 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Legal Thriller">
+            <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#0a1a2d,#1a2a4a);"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Legal Thriller</span></div>
+              <div class="book-body"><div class="book-title">The Lincoln Lawyer</div><div class="book-author">Michael Connelly</div>
+                <div class="book-desc">A defence attorney who works from the back of his Lincoln Town Car takes on a wealthy client whose case may be the most dangerous of his career.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.8 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Legal Thriller">
+            <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#0a1a2d,#1a2a4a);"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Legal Thriller</span></div>
+              <div class="book-body"><div class="book-title">A Time to Kill</div><div class="book-author">John Grisham</div>
+                <div class="book-desc">In small-town Mississippi, a black man shoots the men who attacked his daughter — and a young lawyer must decide whether to take the most explosive case of his life.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.9 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Political Suspense">
+            <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#1a1a0a,#3d3d1a);"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Political Suspense</span></div>
+              <div class="book-body"><div class="book-title">The Day of the Jackal</div><div class="book-author">Frederick Forsyth</div>
+                <div class="book-desc">A professional assassin is hired to kill the French president — and a detective has only days to find him before he succeeds. A classic of the genre.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.9 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Domestic Noir">
+            <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#2d0a0a,#5c1a1a);"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Domestic Noir</span></div>
+              <div class="book-body"><div class="book-title">Big Little Lies</div><div class="book-author">Liane Moriarty</div>
+                <div class="book-desc">Three women on the Australian coast navigate school-gate politics, secrets, and lies — until a murder at a school fundraiser tears everything apart.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></span><span>4.9 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Domestic Noir">
+            <div class="book-card"><div class="book-cover" style="background:linear-gradient(135deg,#2d0a0a,#5c1a1a);"><i class="bi bi-hourglass-split"></i><span class="genre-badge">Domestic Noir</span></div>
+              <div class="book-body"><div class="book-title">The Girl on the Train</div><div class="book-author">Paula Hawkins</div>
+                <div class="book-desc">A woman who commutes past the same houses every day becomes obsessed with one couple — until she witnesses something she was not meant to see.</div>
+                <div class="book-meta"><span class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></span><span>4.7 ★</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="cta-band">
+      <div class="container">
+        <h3>Want personalised Thriller picks?</h3>
+        <p>Tell us your favourite subgenres and we'll find something to keep you up all night.</p>
+        <a href="contact.html" class="btn-cta">Get My Recommendations</a>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4"><div class="footer-brand"><a href="index.html" class="logo d-flex align-items-center mb-3"><span class="sitename">Midnight Reads</span></a><p class="tagline">Helping readers discover their next favourite novel.</p></div></div>
+        <div class="col-lg-4"><h5>Explore More Genres</h5><ul class="list-unstyled"><li><a href="fantasy.html">Fantasy</a></li><li><a href="romance.html">Romance</a></li><li><a href="mystery.html">Mystery</a></li><li><a href="scifi.html">Science Fiction</a></li><li><a href="historical.html">Historical Fiction</a></li></ul></div>
+        <div class="col-lg-4"><div class="footer-cta"><h5>Start Reading</h5><a href="contact.html" class="btn btn-outline">Join Midnight Reads</a></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><div class="footer-bottom-content"><p class="mb-0">© <span class="sitename">Midnight Reads</span>. All rights reserved.</p><div class="credits">Designed with ❤️ for readers everywhere</div></div></div></div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function filterBooks(subgenre, e) {
+      if (e) e.preventDefault();
+      document.querySelectorAll('.subgenre-tabs .nav-link').forEach(t => t.classList.remove('active'));
+      if (e) e.target.classList.add('active');
+      document.querySelectorAll('.book-item').forEach(item => {
+        item.style.display = (subgenre === 'All' || item.dataset.subgenre === subgenre) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
