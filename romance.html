@@ -45,6 +45,29 @@
     .cta-band p { opacity: .8; margin-bottom: 24px; }
     .cta-band .btn-cta { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; transition: background .2s; }
     .cta-band .btn-cta:hover { background: #a07d1a; }
+
+   .book-cover {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #1a1a2e;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-card:hover img {
+  transform: scale(1.05);
+}
+
+.book-cover img {
+  transition: transform 0.4s ease;
+}
   </style>
 </head>
 <body>
@@ -124,7 +147,9 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Contemporary Romance">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-heart-fill"></i><span class="genre-badge">Contemporary</span></div>
+              <div class="book-cover">
+                <img src="assets/img/books/beach read.jpg" alt="Beach Read">
+              </i><span class="genre-badge">Contemporary</span></div>
               <div class="book-body">
                 <div class="book-title">Beach Read</div>
                 <div class="book-author">Emily Henry</div>
@@ -136,7 +161,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Contemporary Romance">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-heart-fill"></i><span class="genre-badge">Contemporary</span></div>
+              <div class="book-cover"><img src="assets/img/books/on vacation.png" alt="People we meet on Vacation" style="width: 450px;height:200px;"></i><span class="genre-badge">Contemporary</span></div>
               <div class="book-body">
                 <div class="book-title">People We Meet on Vacation</div>
                 <div class="book-author">Emily Henry</div>
@@ -148,7 +173,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Contemporary Romance">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-heart-fill"></i><span class="genre-badge">Contemporary</span></div>
+              <div class="book-cover"><img src="assets/img/books/the hating game.jpg" alt="The Hating game"></i><span class="genre-badge">Contemporary</span></div>
               <div class="book-body">
                 <div class="book-title">The Hating Game</div>
                 <div class="book-author">Sally Thorne</div>
@@ -160,7 +185,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Historical Romance">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#5c2a0a,#8b4513);"><i class="bi bi-heart-fill"></i><span class="genre-badge">Historical</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#5c2a0a,#8b4513);"><img src="assets/img/books/outlander.jpg" alt="Outlander"></i><span class="genre-badge">Historical</span></div>
               <div class="book-body">
                 <div class="book-title">Outlander</div>
                 <div class="book-author">Diana Gabaldon</div>
@@ -172,7 +197,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Historical Romance">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#5c2a0a,#8b4513);"><i class="bi bi-heart-fill"></i><span class="genre-badge">Historical</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#5c2a0a,#8b4513);"><img src="assets/img/books/bridgerton.jpg" alt="Bridgerton"></i><span class="genre-badge">Historical</span></div>
               <div class="book-body">
                 <div class="book-title">Bridgerton</div>
                 <div class="book-author">Julia Quinn</div>
@@ -184,7 +209,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Historical Romance">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#5c2a0a,#8b4513);"><i class="bi bi-heart-fill"></i><span class="genre-badge">Historical</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#5c2a0a,#8b4513);"><img src="assets/img/books/pride and prejudice.jpg" alt="Pride and Prejudice"></i><span class="genre-badge">Historical</span></div>
               <div class="book-body">
                 <div class="book-title">Pride and Prejudice</div>
                 <div class="book-author">Jane Austen</div>
@@ -196,7 +221,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Romantic Suspense">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a3d,#2d4a6b);"><i class="bi bi-heart-fill"></i><span class="genre-badge">Romantic Suspense</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a3d,#2d4a6b);"><img src="assets/img/books/in a holidaze.jpg" alt="In a Holidaze"></i><span class="genre-badge">Romantic Suspense</span></div>
               <div class="book-body">
                 <div class="book-title">In a Holidaze</div>
                 <div class="book-author">Christina Lauren</div>
@@ -208,7 +233,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Paranormal Romance">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2a1a4a,#4a2a7a);"><i class="bi bi-heart-fill"></i><span class="genre-badge">Paranormal</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2a1a4a,#4a2a7a);"><img src="assets/img/books/a court of thorns and roses.jpg" alt="A Court of Thorns and Roses"></i><span class="genre-badge">Paranormal</span></div>
               <div class="book-body">
                 <div class="book-title">A Court of Thorns and Roses</div>
                 <div class="book-author">Sarah J. Maas</div>
@@ -220,7 +245,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Paranormal Romance">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2a1a4a,#4a2a7a);"><i class="bi bi-heart-fill"></i><span class="genre-badge">Paranormal</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2a1a4a,#4a2a7a);"><img src="assets/img/books/fourth wing.jpg" alt="Fourth Wing"></i><span class="genre-badge">Paranormal</span></div>
               <div class="book-body">
                 <div class="book-title">Fourth Wing</div>
                 <div class="book-author">Rebecca Yarros</div>
