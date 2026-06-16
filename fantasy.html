@@ -45,6 +45,26 @@
     .cta-band p { opacity: .8; margin-bottom: 24px; }
     .cta-band .btn-cta { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; transition: background .2s; }
     .cta-band .btn-cta:hover { background: #a07d1a; }
+
+    .book-card:hover img {
+  transform: scale(1.05);
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+.book-cover img {
+  transition: transform 0.4s ease;
+}
+
   </style>
 </head>
 <body>
@@ -127,7 +147,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="High Fantasy">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-book-fill"></i><span class="genre-badge">High Fantasy</span></div>
+              <div class="book-cover"><i><img src="assets/img/books/wind.jpg" alt="" style="width: 250px;"></i><span class="genre-badge">High Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The Name of the Wind</div>
                 <div class="book-author">Patrick Rothfuss</div>
@@ -139,7 +159,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="High Fantasy">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-book-fill"></i><span class="genre-badge">High Fantasy</span></div>
+              <div class="book-cover"><img src="assets/img/books/kings.jpg" alt="" style="wi"></i><span class="genre-badge">High Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The Way of Kings</div>
                 <div class="book-author">Brandon Sanderson</div>
@@ -151,7 +171,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="High Fantasy">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-book-fill"></i><span class="genre-badge">High Fantasy</span></div>
+              <div class="book-cover"><img src="assets/img/books/wizard.jpg" alt=""></i><span class="genre-badge">High Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">A Wizard of Earthsea</div>
                 <div class="book-author">Ursula K. Le Guin</div>
@@ -163,7 +183,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="High Fantasy">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-book-fill"></i><span class="genre-badge">High Fantasy</span></div>
+              <div class="book-cover"><img src="assets/img/books/lamora.jpg" alt=""></i><span class="genre-badge">High Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The Lies of Locke Lamora</div>
                 <div class="book-author">Scott Lynch</div>
@@ -175,7 +195,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Urban Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#1a3a5c);"><i class="bi bi-book-fill"></i><span class="genre-badge">Urban Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#1a3a5c);"><img src="assets/img/books/london.jpg" alt=""></i><span class="genre-badge">Urban Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">Rivers of London</div>
                 <div class="book-author">Ben Aaronovitch</div>
@@ -187,7 +207,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Urban Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#1a3a5c);"><i class="bi bi-book-fill"></i><span class="genre-badge">Urban Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#1a3a5c);"><img src="assets/img/books/gods.jpg" alt=""></i><span class="genre-badge">Urban Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">American Gods</div>
                 <div class="book-author">Neil Gaiman</div>
@@ -199,7 +219,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Urban Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#1a3a5c);"><i class="bi bi-book-fill"></i><span class="genre-badge">Urban Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1b69,#1a3a5c);"><img src="assets/img/books/files.jpg" alt=""></i><span class="genre-badge">Urban Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The Dresden Files</div>
                 <div class="book-author">Jim Butcher</div>
@@ -211,7 +231,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#3d5a1e,#6b8f3d);"><i class="bi bi-book-fill"></i><span class="genre-badge">Cosy Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d5a1e,#6b8f3d);"><img src="assets/img/books/sea.jpg" alt=""></i><span class="genre-badge">Cosy Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The House in the Cerulean Sea</div>
                 <div class="book-author">TJ Klune</div>
@@ -223,7 +243,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#3d5a1e,#6b8f3d);"><i class="bi bi-book-fill"></i><span class="genre-badge">Cosy Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d5a1e,#6b8f3d);"><img src="assets/img/books/piranesi.jpg" alt=""></i><span class="genre-badge">Cosy Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">Piranesi</div>
                 <div class="book-author">Susanna Clarke</div>
@@ -235,7 +255,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#3d5a1e,#6b8f3d);"><i class="bi bi-book-fill"></i><span class="genre-badge">Cosy Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d5a1e,#6b8f3d);"><img src="assets/img/books/baking.jpg" frameborder="0"></iframe></i><span class="genre-badge">Cosy Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">A Wizard's Guide to Defensive Baking</div>
                 <div class="book-author">T. Kingfisher</div>
@@ -247,7 +267,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Dark Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2a0a0a,#5c1a1a);"><i class="bi bi-book-fill"></i><span class="genre-badge">Dark Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2a0a0a,#5c1a1a);"><img src="assets/img/books/triology.jpg" alt=""></i><span class="genre-badge">Dark Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The First Law Trilogy</div>
                 <div class="book-author">Joe Abercrombie</div>
@@ -259,7 +279,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Dark Fantasy">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2a0a0a,#5c1a1a);"><i class="bi bi-book-fill"></i><span class="genre-badge">Dark Fantasy</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2a0a0a,#5c1a1a);"><img src="assets/img/books/poppy.jpg" alt=""></i><span class="genre-badge">Dark Fantasy</span></div>
               <div class="book-body">
                 <div class="book-title">The Poppy War</div>
                 <div class="book-author">R.F. Kuang</div>

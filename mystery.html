@@ -45,6 +45,27 @@
     .cta-band p { opacity: .8; margin-bottom: 24px; }
     .cta-band .btn-cta { background: #c9a227; color: #1a1a2e; font-weight: 700; padding: 12px 32px; border-radius: 6px; text-decoration: none; }
     .cta-band .btn-cta:hover { background: #a07d1a; }
+
+    .book-card:hover img {
+  transform: scale(1.05);
+}
+
+.book-cover img {
+  transition: transform 0.4s ease;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-cover {
+  position: relative;
+  overflow: hidden;
+}
+
+
   </style>
 </head>
 <body>
@@ -113,7 +134,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Mystery">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-search"></i><span class="genre-badge">Cosy Mystery</span></div>
+              <div class="book-cover"><img src="assets/img/books/murder.jpg" alt=""></i><span class="genre-badge">Cosy Mystery</span></div>
               <div class="book-body">
                 <div class="book-title">The Thursday Murder Club</div>
                 <div class="book-author">Richard Osman</div>
@@ -125,7 +146,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Cosy Mystery">
             <div class="book-card">
-              <div class="book-cover"><i class="bi bi-search"></i><span class="genre-badge">Cosy Mystery</span></div>
+              <div class="book-cover"><img src="assets/img/books/detective.jpg" alt=""></i><span class="genre-badge">Cosy Mystery</span></div>
               <div class="book-body">
                 <div class="book-title">The No. 1 Ladies' Detective Agency</div>
                 <div class="book-author">Alexander McCall Smith</div>
@@ -137,7 +158,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Crime Fiction">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a0a,#2d4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Crime Fiction</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a0a,#2d4a1a);"><img src="assets/img/books/tattoo.jpg" alt=""></i><span class="genre-badge">Crime Fiction</span></div>
               <div class="book-body">
                 <div class="book-title">The Girl with the Dragon Tattoo</div>
                 <div class="book-author">Stieg Larsson</div>
@@ -149,7 +170,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Crime Fiction">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a0a,#2d4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Crime Fiction</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#1a2a0a,#2d4a1a);"><img src="assets/img/books/woods.jpg" alt=""></i><span class="genre-badge">Crime Fiction</span></div>
               <div class="book-body">
                 <div class="book-title">In the Woods</div>
                 <div class="book-author">Tana French</div>
@@ -161,7 +182,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Psychological Mystery">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2d1a3d,#4a2a6b);"><i class="bi bi-search"></i><span class="genre-badge">Psychological</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1a3d,#4a2a6b);"><img src="assets/img/books/gonegirl.jpg" alt=""></i><span class="genre-badge">Psychological</span></div>
               <div class="book-body">
                 <div class="book-title">Gone Girl</div>
                 <div class="book-author">Gillian Flynn</div>
@@ -173,7 +194,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Psychological Mystery">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#2d1a3d,#4a2a6b);"><i class="bi bi-search"></i><span class="genre-badge">Psychological</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#2d1a3d,#4a2a6b);"><img src="assets/img/books/patient.jpg" alt=""></i><span class="genre-badge">Psychological</span></div>
               <div class="book-body">
                 <div class="book-title">The Silent Patient</div>
                 <div class="book-author">Alex Michaelides</div>
@@ -185,7 +206,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Whodunit">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#3d2a0a,#6b4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Whodunit</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d2a0a,#6b4a1a);"><img src="assets/img/books/werenone.jpg" alt=""></i><span class="genre-badge">Whodunit</span></div>
               <div class="book-body">
                 <div class="book-title">And Then There Were None</div>
                 <div class="book-author">Agatha Christie</div>
@@ -197,7 +218,7 @@
 
           <div class="col-lg-3 col-md-4 col-sm-6 book-item" data-subgenre="Whodunit">
             <div class="book-card">
-              <div class="book-cover" style="background:linear-gradient(135deg,#3d2a0a,#6b4a1a);"><i class="bi bi-search"></i><span class="genre-badge">Whodunit</span></div>
+              <div class="book-cover" style="background:linear-gradient(135deg,#3d2a0a,#6b4a1a);"><img src="assets/img/books/knivesout.jpg" alt=""></i><span class="genre-badge">Whodunit</span></div>
               <div class="book-body">
                 <div class="book-title">Knives Out</div>
                 <div class="book-author">Rian Johnson (novelisation)</div>
